@@ -1,0 +1,11 @@
+@APRApi_HostAddress = http://localhost:5002
+
+GET {{APRApi_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{APRApi_HostAddress}}/todos/2
+Accept: application/json
+
+###
