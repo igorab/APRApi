@@ -1,26 +1,19 @@
 using System.Text.Json.Serialization;
 
-var builder = WebApplication.CreateBuilder(args);
-
+var builder = WebApplication.CreateBuilder();
 var app = builder.Build();
 
-app.Run(async (context) =>
+//https://metanit.com/sharp/aspnet6/2.10.php
+
+Task ReadData(HttpContext сontext)
 {
-    //context.Response.ContentType = "text/html; charset=utf-8";
-    //var stringBuilder = new System.Text.StringBuilder("<h3>Параметры строки запроса</h3><table>");
-    //stringBuilder.Append("<tr><td>Параметр</td><td>Значение</td></tr>");
-    //foreach (var param in context.Request.Query)
-    //{
-    //    stringBuilder.Append($"<tr><td>{param.Key}</td><td>{param.Value}</td></tr>");
-    //}
-    //stringBuilder.Append("</table>");
-    //await context.Response.WriteAsync(stringBuilder.ToString());
+    
+    return null;
+}
 
+RequestDelegate handler = ReadData;
 
-    context.Response.ContentType = "text/html; charset=utf-8";
-    await context.Response.SendFileAsync("html/Index.html");
-
-});
+app.Run(ReadData);
 
 app.Run();
 
